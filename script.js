@@ -15,26 +15,35 @@ navCloseBtn.addEventListener('click', navToggleFunc);
 
 const themeBtn = document.querySelectorAll('.theme-btn');
 
+function setTheme(theme) {
+  document.body.classList.remove('light-theme', 'dark-theme');
+  document.body.classList.add(theme);
+  for (let i = 0; i < themeBtn.length; i++) {
+    themeBtn[i].classList.remove('light', 'dark');
+    themeBtn[i].classList.add(theme === 'light-theme' ? 'light' : 'dark');
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = document.body.classList.contains('dark-theme')
+    ? 'dark-theme'
+    : 'light-theme';
+
+  const newTheme = currentTheme === 'dark-theme' ? 'light-theme' : 'dark-theme';
+  setTheme(newTheme);
+
+  localStorage.setItem('themePreference', newTheme);
+}
+
+const storedTheme = localStorage.getItem('themePreference');
+if (storedTheme) {
+  setTheme(storedTheme);
+}
 
 for (let i = 0; i < themeBtn.length; i++) {
-
-  themeBtn[i].addEventListener('click', function () {
-
-    
-    document.body.classList.toggle('light-theme');
-    document.body.classList.toggle('dark-theme');
-
-    for (let i = 0; i < themeBtn.length; i++) {
-
-      
-      themeBtn[i].classList.toggle('light');
-      themeBtn[i].classList.toggle('dark');
-
-    }
-
-  })
-
+  themeBtn[i].addEventListener('click', toggleTheme);
 }
+
 
 
 
@@ -71,6 +80,8 @@ function showComputerSciencePosts() {
     }
   });
 }
+
+
 
 
 
