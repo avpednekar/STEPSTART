@@ -928,7 +928,7 @@
     padding: 20px ; 
     margin-bottom: 5rem; 
     border-radius: 10px;
-    height: 3000px;
+    height: 2500px;
     box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.05);
     transition: 0.25s ease;
   }
@@ -956,6 +956,23 @@
     box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
   }
 
+  .blog11-card {
+    background: var(--background-primary);
+    padding: 20px ; 
+    margin-bottom: 5rem; 
+    border-radius: 10px;
+    height: 660px;
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.05);
+    transition: 0.25s ease;
+  }
+
+  
+  .blog11-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
+  }
+
+    
  /* .blog8img1 {
     width:  50%;
     height: 50%;
