@@ -923,6 +923,23 @@
   }
 
 
+      .blog10-card {
+    background: var(--background-primary);
+    padding: 20px ; 
+    margin-bottom: 5rem; 
+    border-radius: 10px;
+    height: 2000px;
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.05);
+    transition: 0.25s ease;
+  }
+
+  
+  .blog10-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 10px hsla(0, 0%, 0%, 0.1);
+  }
+
+
   .blog8-card {
     background: var(--background-primary);
     padding: 20px ; 
