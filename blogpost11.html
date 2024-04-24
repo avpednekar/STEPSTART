@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ankita Pednekar's Blog</title>
+
+  <!--
+    - favicon
+  -->
+ <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200;300;400;500;600;700&family=Noto+Sans:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="light-theme">
+
+  <header>
+
+    <div class="container">
+
+      <nav class="navbar">
+
+        <a href="/index.html">
+          <img src="./images/logo-light.svg" alt="Logo" width="90" class="logo-light">
+          <img src="./images/logo-dark.svg" alt="Logo" width="90" class="logo-dark">
+        </a>
+
+
+        <div class="btn-group">
+
+          <button class="theme-btn theme-btn-mobile light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="flex-wrapper">
+
+          <ul class="desktop-nav">
+
+            <li>
+              <a href= "/index.html" class="nav-link" onclick="showAllPosts()">Home</a>
+            </li>
+
+            <li>
+              <a href="/aboutme.html" class="nav-link">About Me</a>
+            </li>
+
+
+          </ul>
+
+          <button class="theme-btn theme-btn-desktop light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="mobile-nav">
+
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="wrapper">
+
+            <p class="h3 nav-title">Main Menu</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="/index.html" class="nav-link" onclick="showAllPosts()">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="/aboutme.html" class="nav-link">About Me</a>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="h3 nav-title">Topics</p>
+
+            <ul>
+
+              <li class="nav-item" onclick="showMathPosts()">
+                <a class="nav-link">Math</a>
+              </li>
+  
+              <li class="nav-item" onclick="showComputerSciencePosts()">
+                <a class="nav-link">Computer Science</a>
+              </li>
+
+              <li class="nav-item" onclick="showAllPosts()">
+                <a class="nav-link">Show All</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+
+
+  <main>
+
+    <div class="hero">
+
+      <div class="container">
+
+        <div class="left">
+
+          <h1 class="h1">
+            Caesar Ciphers
+          </h1>
+
+          <p class="h3">
+            February 5, 2024
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <div class="main">
+
+      <div class="container">
+
+        <div class="blog">
+
+            <div class="blog11-card">
+            
+            <p class="aboutme-text">
+                
+              The Caesar Cipher shifts the entire alphabet to create the new alphabet used for the code. For example, if we shift the alphabet three letters to the right (so A matches with D), the message “cryptography” will be turned into “fubswrjudskb”.
+ <br>
+
+              <br>To encrypt messages: <br>
+              
+              <br> #include<bits/stdc++.h>
+              <br> using namespace std;
+              <br>
+              <br> int main(){
+              <br> string text,ftext;
+              <br>     int shift;
+              <br>     cout << "How many shifts?: ";
+              <br>     cin >> shift;
+              <br>     cout << "Message: ";
+              <br>     cin >> text;
+              <br> for(int i=0; i < text.size(); i++){
+              <br>  ftext += (text[i]-'A'- shift) % 26 + 'A';
+              <br>}
+              <br> cout << "Encrypted message: "<< ftext <<'\n';
+              <br> return 0;
+              <br> }
+              
+              
+              <br> Notice how when the cycle for the alphabet is completed, it cycles back so that all letters can have a space, and uses modular arithmetic. Neat!
+
+            </p>
+
+
+           
+            
+            </div>
+
+        </div>
+
+
+
+
+        <div class="aside">
+
+          <div class="topics">
+
+            <h2 class="h2">Read my posts!</h2>
+            
+            <a href="/index.html" class="topic-btn" onclick="showMathPosts()">
+              <div class="icon-box">
+                <ion-icon name="calculator-outline"></ion-icon>
+              </div>
+  
+              <p>Mathematics</p>
+            </a>
+  
+            <a href="/index.html" class="topic-btn" onclick="showComputerSciencePosts()">
+              <div class="icon-box">
+                <ion-icon name="desktop-outline"></ion-icon>
+              </div>
+  
+              <p>Computer Science</p>
+            </a>
+  
+            <a href="/index.html" class="topic-btn" onclick="showAllPosts()">
+              <div class="icon-box">
+                <ion-icon name="reorder-three-outline"></ion-icon>
+              </div>
+  
+              <p>All Posts</p>
+            </a>
+  
+
+          </div>
+
+          <div class="contact">
+
+            <h2 class="h2">Contact Me!</h2>
+
+            <div class="wrapper">
+
+              <p>
+                Feel free to message me anytime about anything! :)
+              </p>
+
+              <ul class="social-link">
+
+                <li>
+                  <a href="mailto: ankitaped@gmail.com" class="icon-box google">
+                    <ion-icon name="logo-google"></ion-icon>
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <footer>
+
+    <div class="container">
+
+      <div class="wrapper">
+
+        <a href="#" class="footer-logo">
+          <img src="./images/logo-light.svg" alt="DevBlog's Logo" width="150" height="40" class="logo-light">
+          <img src="./images/logo-dark.svg" alt="DevBlog's Logo" width="150" height="40" class="logo-dark">
+        </a>
+
+        <p class="footer-text">
+          My personal blog for others to learn about interesting topics I learn about! 
+        </p>
+
+      </div>
+
+      <div class="wrapper">
+
+        <p class="footer-title">Quick Links</p>
+
+        <ul>
+
+          <li>
+            <a href="mailto: ankitaped@gmail.com" class="footer-link">Email</a>
+          </li>
+
+        </ul>
+
+    </div>
+
+
+  </footer>
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
