@@ -139,7 +139,7 @@
           </h1>
 
           <p class="h3">
-            July 6th, 2022
+            March 30, 2024
           </p>
 
         </div>
@@ -162,37 +162,55 @@
             <div class="blog9-card">
             
             <p class="aboutme-text">
-              Welcome to my blog! I recently learned about Frobenius Numbers, and I thought they were super 
-              interesting to share with my readers as a first post :) <br>
+                I have recently found the Euler’s algorithm in math (I think the “algorithm” part was something 
+                that made me connect to programming) while I was practicing solving diophantine equations, and 
+                Euler’s Algorithm was a major part of it. It’s really interesting to see how some math concepts 
+                are easy to implement but are hard to fully understand/prove, but this one is simple and nice! 
+                It can be used to find the greatest common denominator of two large numbers (the importance of 
+                this is self explanatory), cryptography, and data compression. 
 
-              <br> If we suppose that x<sub>n</sub> are positive integers such that the greatest common factor 
-              of x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, …, and x<sub>n</sub> is 1. The Frobenius 
-              Number, often expressed by g(x<sub>1</sub>, x<sub>2</sub>, x<sub>3</sub>, …, x<sub>n</sub>), is 
-              the largest positive integer, y, such that a<sub>1</sub>x<sub>1</sub> + a<sub>2</sub>x<sub>2</sub> + 
-              a<sub>3</sub>x<sub>3</sub> + … + a<sub>n</sub>x<sub>n</sub> = y has no nonnegative solution. <br>
+              <br> Using Euler’s Algorithm helps one find the greatest common factor since subtracting the lesser number from the larger number will not change the greatest common factor. The goal is to reach 0 for the GCF that’s left. For an algorithm (in python) for the iterative implementation: <br>
+
+              <br> def gcd(a, b);
+              <br>     while b!= 0:
+              <br>     a, b = b, a % b
+              <br>   return a
+              <br> a = 70
+              <br> b =80
+              <br> ans = gcd(a, b)
+              <br> print(ans)
+
+     
+              <br> Which is really short and will output 10. It’s pretty easy to understand, where when we subtract the two numbers from each other, the greatest common factor would still be a factor of the final value after the subtraction. Nice! <br>
               
-              <br> For when there are two numbers, the greatest number y that works here will be 
-              x<sub>1</sub>x<sub>2</sub>-x<sub>1</sub>-x<sub>2</sub>, or (x<sub>1</sub>-1)(x<sub>2</sub>-1)-1. <br>
+              <br> Essentially it works such that: <br>
               
-              <br> One rather popular example of this problem is the McNugget problem where mathematicians wanted to
-              find the greatest possible number that could not be expressed when buying boxes of chicken nuggets 
-              from McDonalds, since they came in box sizes of 6, 9, or 20. <br>
+              <br> If we have two numbers a and b, then we can create the follow set of equations (note that the remainders r<sub>i</sub> will have to be less than r<sub>i-1</sub>, and q<sub>i</sub> will be the quotients): <br>
+
+              <br> a = bq + r
+              <br> b = rq<sub>1</sub> + r<sub>1</sub>
+              <br> r = r<sub>1</sub>q<sub>2</sub> + r<sub>2</sub>,
+
               
-              <br> To solve this, we can look at 6 and 9 together. We’ll have 6x+9y=k, or 3(2x+3y). This means that 
-              we have to expel all numbers of 3 since they can be created by 6 and 9. Note that 2x+3y cannot be 
-              equal to 1. Now if we just add one 20, we’ll have that 3(2x+3y)+20, which can be factored into 
-              3(2x+3y+6)+2, which means that any number two more than a multiple of 3 can also be created. Again, 
-              note that 2x+3y+6 cannot be equal to 7 in this case since the value which is impossible to reach of 2x+3y 
-              is 1. Now, we want to see if reaching a number that is one more than a multiple of 3 is possible, in which 
-              we can add another 20 to our equation. We will now have, 3(2x+3y+6)+22, which can then be factored into 
-              3(2x+3y+13)+1. We can then see that the value of 2x+3y+13 cannot be 14. This will be our solution to the 
-              problem where if we plug this in, we’ll have our answer of 43. <br>
+              <br> And so on. We will continue this sequence until we have that r<sub>i-1</sub> = r<sub>i</sub>q<sub>i+1</sub>, so the greatest common divisor of a and b will be r<sub>i</sub>. <br>
               
-              <br> Funny enough, McDonalds added another possible combination of box sizes you could order to bypass this! <br>
+              <br> For example, we can have the numbers 130 and 80 , where we can make the following relationships and continue the sequence until we get a r<sub>i</sub> of zero. <br>
+
+              <br> 130 = 80(1) + 50
+
+              <br> 80 = 50(1) + 30
+
+              <br> 50 = 30(1) + 20
+
+              <br> 30 = 20(1) + 10
+
+              <br> 20 = 10(2). 
+
+              <br> From this, we can see that the greatest common divisor from the Euclidean Algorithm would be 10. <br>
+
+              <br> Overall, it’s one of those really smooth things in math that I have been using in my recent self-studying of abstract algebra. It’s fun to see how something I learned in middle school came back! <br>
+
               
-              <br> There are formulas for finding Frobenius numbers where there were two or three numbers, 
-              in addition to when the numbers were an arithmetic or geometric sequence, but beyond that none were found. <br>
-            
             </p>
 
 
